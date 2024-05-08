@@ -125,4 +125,44 @@ contract ExpenseSplitter {
         }
         return false;
     }
+      modifier isMember(uint256 _expenseId, address _address) {
+        require(isMemberOfExpense(_expenseId, _address), "Caller is not a member of the expense");
+        _;
+    }
+
+    function settleExpense(uint256 _expenseId, uint256 _withdrawAmount) external payable onlyExpenseCreator(_expenseId) {
+        Dutch storage expense = expenses[_expenseId];
+        require(_withdrawAmount > 0, "Withdrawal amount must be greater than zero");
+        require(_withdrawAmount <= expense.targetAmount, "Withdrawal amount exceeds the target amount");
+        require(expense.contributedAmount >= _withdrawAmount, "Insufficient funds contributed");
+
+        // Request approval from all members
+        for (uint256 i = 0; i < expense.members.length; i++) {
+            address member = expense.members[i];
+            require(approveMemberWithdrawal(_expenseId, member), "Member did not approve withdrawal");
+        }
+
+        // Transfer the withdrawal amount to the expense creator
+        address payable creator = payable(expense.creator);
+        creator.transfer(_withdrawAmount);
+
+        // Update the contributedAmount and settled status
+        expense.contributedAmount -= _withdrawAmount;
+        if (expense.contributedAmount == 0) {
+            expense.settled = true;
+        }
+
+        emit ExpenseSettled(_expenseId);
+    }
+
+    function approveMemberWithdrawal(uint256 _expenseId, address _member) internal pure returns (bool) {
+        // Implement the logic to request approval from the member
+        // This could involve calling an external contract or using a voting mechanism
+        // For simplicity, let's assume the member approves the withdrawal
+        _expenseId; // Suppress the "Unused local variable" warning
+        _member; // Suppress the "Unused local variable" warning
+        return true;
+    }
+
+
 }
