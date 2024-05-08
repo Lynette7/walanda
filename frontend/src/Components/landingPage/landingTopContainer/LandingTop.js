@@ -19,7 +19,7 @@ function LandingTop() {
             Wala<span id="kazi">nda </span> <br />
             Splitting Expenses
           </h2>
-          <Link to="/expenseLogin">
+          <Link to="/dashboard">
             <button id="get-started"> Get Started </button>
           </Link>
         </div>
