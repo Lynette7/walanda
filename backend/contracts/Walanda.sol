@@ -16,4 +16,22 @@ contract ExpenseSplitter {
         bool settled;
         address[] members;
     }
+
+     mapping(uint256 => Dutch) public expenses;
+    mapping(uint256 => mapping(address => uint256)) public contributions;
+
+    event ExpenseCreated(
+        uint256 id,
+        address creator,
+        string name,
+        string description,
+        uint256 targetAmount
+    );
+    event MemberAdded(uint256 expenseId, address member);
+    event ContributionMade(
+        uint256 indexed expenseId,
+        address contributor,
+        uint256 amount
+    );
+    event ExpenseSettled(uint256 expenseId);
 }
