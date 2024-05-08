@@ -94,5 +94,35 @@ contract ExpenseSplitter {
         expenseId++;
     }
 
+    function addMember(uint256 _expenseId, address _member)
+        external
+        onlyExpenseCreator(_expenseId)
+    {
+        expenses[_expenseId].members.push(_member);
+        expenses[_expenseId].contributionPerMember = expenses[_expenseId]
+            .targetAmount / expenses[_expenseId].members.length;
+        emit MemberAdded(_expenseId, _member);
+    }
 
+    function contribute(uint256 _expenseId, uint256 _amount) external payable {
+        Dutch storage expense = expenses[_expenseId];
+        require(_amount > 0, "Contribution amount must be greater than zero");
+        require(isMemberOfExpense(_expenseId, msg.sender), "Caller is not a member of the expense");
+        require(_amount == expense.contributionPerMember, "Incorrect contribution amount");
+
+        contributions[_expenseId][msg.sender] += _amount;
+        expense.contributedAmount += _amount;
+
+        emit ContributionMade(_expenseId, msg.sender, _amount);
+    }
+
+    function isMemberOfExpense(uint256 _expenseId, address _address) public view returns (bool) {
+        Dutch storage expense = expenses[_expenseId];
+        for (uint256 i = 0; i < expense.members.length; i++) {
+            if (expense.members[i] == _address) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
