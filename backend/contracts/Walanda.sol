@@ -1,11 +1,11 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-contract ExpenseSplitter {
+contract WalandaSplitter {
     address public owner;
     uint256 public expenseId;
 
-    struct Dutch {
+    struct Walanda {
         uint256 id;
         address creator;
         string name;
@@ -17,7 +17,7 @@ contract ExpenseSplitter {
         address[] members;
     }
 
-     mapping(uint256 => Dutch) public expenses;
+     mapping(uint256 => Walanda) public expenses;
     mapping(uint256 => mapping(address => uint256)) public contributions;
 
     event ExpenseCreated(
@@ -63,7 +63,7 @@ contract ExpenseSplitter {
         uint256 newExpenseId = expenseId;
         uint256 contributionPerMember = _targetAmount / _members.length;
 
-        expenses[newExpenseId] = Dutch(
+        expenses[newExpenseId] = Walanda(
             newExpenseId,
             msg.sender,
             _name,
@@ -105,7 +105,7 @@ contract ExpenseSplitter {
     }
 
     function contribute(uint256 _expenseId, uint256 _amount) external payable {
-        Dutch storage expense = expenses[_expenseId];
+        Walanda storage expense = expenses[_expenseId];
         require(_amount > 0, "Contribution amount must be greater than zero");
         require(isMemberOfExpense(_expenseId, msg.sender), "Caller is not a member of the expense");
         require(_amount == expense.contributionPerMember, "Incorrect contribution amount");
@@ -117,7 +117,7 @@ contract ExpenseSplitter {
     }
 
     function isMemberOfExpense(uint256 _expenseId, address _address) public view returns (bool) {
-        Dutch storage expense = expenses[_expenseId];
+        Walanda storage expense = expenses[_expenseId];
         for (uint256 i = 0; i < expense.members.length; i++) {
             if (expense.members[i] == _address) {
                 return true;
@@ -131,7 +131,7 @@ contract ExpenseSplitter {
     }
 
     function settleExpense(uint256 _expenseId, uint256 _withdrawAmount) external payable onlyExpenseCreator(_expenseId) {
-        Dutch storage expense = expenses[_expenseId];
+        Walanda storage expense = expenses[_expenseId];
         require(_withdrawAmount > 0, "Withdrawal amount must be greater than zero");
         require(_withdrawAmount <= expense.targetAmount, "Withdrawal amount exceeds the target amount");
         require(expense.contributedAmount >= _withdrawAmount, "Insufficient funds contributed");
