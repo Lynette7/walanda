@@ -3,12 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Header from "../header/Header";
-// import DescriptionUpdate from "./expenseSplitForms/DescriptionUpdate";
-// import ImageUpdate from "./expenseSplitForms/ImageUpdate";
-// import LocationUpdate from "./expenseSplitForms/LocationUpdate";
-// import RatingUpdate from "./expenseSplitForms/RatingUpdate";
-// import SpecialityUpdate from "./expenseSplitForms/SpecialityUpdate";
-// import UsernameUpdate from "./expenseSplitForms/UsernameUpdate";
 import { fetchExpense } from "./ExpenseSpliitSlice";
 import "./expenseSplit.css";
 
@@ -20,12 +14,7 @@ function ExpenseSpliit() {
     (state) => state.expenseSplit.expense
   );
   const status = useSelector((state) => state.expenseSplit.status);
-  // const [trigger, setTrigger] = useState(false);
-  // const [triggerName, setTriggerName] = useState(false);
-  // const [triggerLocation, setTriggerLocation] = useState(false);
-  // const [triggerDescription, setTriggerDescription] = useState(false);
-  // const [triggerSpeciality, setTriggerSpeciality] = useState(false);
-  // const [triggerRating, setTriggerRating] = useState(false);
+
 
   useEffect(() => {
     dispatch(fetchExpense(profileId, token));
@@ -43,11 +32,9 @@ function ExpenseSpliit() {
           <img src={expenseSplit.image} alt="profile pic" />
           <FontAwesomeIcon
             icon={faCamera}
-            // onClick={() => setTrigger((prev) => !prev)}
             className="user-update image-profile"
           />
 
-          {/* {trigger ? <ImageUpdate setTrigger={setTrigger} /> : null} */}
         </div>
 
         <div className="row-update">
