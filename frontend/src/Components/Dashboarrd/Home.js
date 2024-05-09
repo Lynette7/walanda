@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import './SideBar.css';
 // import CreateExpense from "./CreateExpense";
 

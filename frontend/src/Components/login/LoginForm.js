@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "./LoginForm.css";
 import { addlogin } from "../expense/LoginExpSlice";
 import LandingHeader from "../LandingTopHeader/LandingHeader";
-import { Dashboard } from "@mui/icons-material";
+// import { Dashboard } from "@mui/icons-material";
 // import Dashboard from "../../pages/Dashboard";
 
 function LoginForm() {
@@ -16,7 +16,7 @@ function LoginForm() {
     password: "",
   });
   const errors = useSelector((state) => state.expense.errors);
-  const status = useSelector((state) => state.expense.status);
+  // const status = useSelector((state) => state.expense.status);
   const expense = useSelector((state) => state.expense);
   const [visible, setVisible] = useState(false);
   console.log(expense);

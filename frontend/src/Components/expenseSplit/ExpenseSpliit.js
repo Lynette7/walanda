@@ -1,6 +1,6 @@
 import { faCamera, faPen } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Header from "../header/Header";
 import { fetchExpense } from "./ExpenseSpliitSlice";

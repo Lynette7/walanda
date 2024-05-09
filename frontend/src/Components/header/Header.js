@@ -1,7 +1,7 @@
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import "./Header.css";
 
@@ -15,7 +15,7 @@ function Header() {
     navigate("/expenseLogin");
   }
 
-  const expense = useSelector((state) => state.expense.expense);
+  // const expense = useSelector((state) => state.expense.expense);
 
   return (
     <div className="header">

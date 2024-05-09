@@ -1,12 +1,8 @@
-import React, { useState } from "react";
-import ExpenseCards from "./ExpenseCards";
+import React from "react";
+// import ExpenseCards from "./ExpenseCards";
 
 function ExpenseContainer() {
-  const [expenseSearch, setHanydmanSearch] = useState("");
-  function handleChange(event) {
-    const value = event.target.value;
-    setHanydmanSearch(value);
-  }
+
 
   return (
     <div className="home">
@@ -53,7 +49,7 @@ function ExpenseContainer() {
       </div>
       <div className="handy-page">
         <div className="sidebar-card">
-          <ExpenseCards expenseSearch={expenseSearch} />
+          {/* <ExpenseCards expenseSearch={expenseSearch} /> */}
         </div>
       </div>
     </div>
