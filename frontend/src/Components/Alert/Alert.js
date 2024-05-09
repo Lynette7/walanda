@@ -21,7 +21,7 @@ function Alert() {
               navigate("/customerLogin");
               setInVisible(true);
             } else {
-              navigate("/handymanLogin");
+              navigate("/expenseLogin");
               setInVisible(true);
             }
           }}

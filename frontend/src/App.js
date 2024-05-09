@@ -9,6 +9,8 @@ import ExpenseSplitSlice from "./Components/expenseSplit/ExpenseSpliit";
 import Alert from "./Components/Alert/Alert";
 import Footer from "./Components/Footer/Footer";
 import Dashboard from "./Components/Dashboarrd/Dashboard";
+import CreateExpense from './Components/Dashboarrd/CreateExpense';
+
 
 function App() {
   return (
@@ -22,6 +24,7 @@ function App() {
         <Route path="/expenseProfile" element={<ExpenseSplitSlice />} />
         <Route path="/expense/alert" element={<Alert />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/createExpense" element={<CreateExpense />} />
 
       </Routes>
       <Footer />
