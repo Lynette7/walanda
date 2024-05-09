@@ -73,7 +73,7 @@ function SideBar() {
           class="icn"
           alt="" />
         <div class="dp">
-          <img src="frontend/public/images/profile-removebg-preview.png"
+          <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210180014/profile-removebg-preview.png"
             class="dpicn"
             alt="dp" />
         </div>
@@ -86,19 +86,12 @@ function SideBar() {
           <nav class="nav">
             <div class="nav-upper-options">
               <div class="nav-option option1">
-                <img src="frontend/public/images/29.png"
+                <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210182148/Untitled-design-(29).png"
                   class="nav-img"
                   alt="dashboard" />
                 <h3> Dashboard</h3>
               </div>
 
-              {/* <div class="option2 nav-option">
-                <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/5.png"
-                  class="nav-img"
-                  alt="articles" />
-                 <h3> Created Expenses</h3>
-
-              </div> */}
 
               <div className={`nav-option option2 ${isCreatedExpensesOpen ? 'active' : ''}`} onClick={handleCreatedExpensesClick}>
                 <img src="frontend/public/images/5.png" className="nav-img" alt="articles" />
@@ -118,7 +111,7 @@ function SideBar() {
               </div>
 
               <div class="nav-option option3" onClick={handleCreatedExpensesClick}>
-                <img src="frontend/public/images/9.png"
+                <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/9.png"
                   class="nav-img"
                   alt="report" />
                 <h3> Closed Expenses</h3>
