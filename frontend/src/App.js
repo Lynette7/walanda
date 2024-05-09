@@ -8,7 +8,8 @@ import ResetPassword from "./Components/resetPassword/ResetPassword";
 import ExpenseSplitSlice from "./Components/expenseSplit/ExpenseSpliit";
 import Alert from "./Components/Alert/Alert";
 import Footer from "./Components/Footer/Footer";
-import Dashboard from "./Components/Dashboard/Dashboard";
+import Dashboard from "./Components/Dashboarrd/Dashboard";
+
 function App() {
   return (
     <div className="App">
@@ -21,7 +22,6 @@ function App() {
         <Route path="/expenseProfile" element={<ExpenseSplitSlice />} />
         <Route path="/expense/alert" element={<Alert />} />
         <Route path="/dashboard" element={<Dashboard />} />
-
 
       </Routes>
       <Footer />

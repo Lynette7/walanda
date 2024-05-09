@@ -2,7 +2,7 @@ export function fetchExpense(profileId, token) {
   return async function (dispatch) {
     dispatch({ type: "expense/loading" });
     const response = await fetch(
-      `https://chapakazi-server-production.up.railway.app/handymen/${profileId}`,
+      `https://walanda-server-production.up.railway.app/handymen/${profileId}`,
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -30,7 +30,7 @@ export function updateImage(profileId, token, image, setTrigger) {
   return async function (dispatch) {
     dispatch({ type: "expense/loading" });
     const response = await fetch(
-      `https://chapakazi-server-production.up.railway.app/handymen/${profileId}`,
+      `https://walanda-server-production.up.railway.app/handymen/${profileId}`,
       {
         method: "PATCH",
         headers: {
@@ -55,7 +55,7 @@ export function updateUserName(profileId, token, username, setTriggerName) {
   return async function (dispatch) {
     dispatch({ type: "expense/loading" });
     const response = await fetch(
-      `https://chapakazi-server-production.up.railway.app/handymen/${profileId}`,
+      `https://walanda-server-production.up.railway.app/handymen/${profileId}`,
       {
         method: "PATCH",
         headers: {
@@ -80,7 +80,7 @@ export function updateUserName(profileId, token, username, setTriggerName) {
 export function updateLocation(profileId, token, location, setTriggerLocation) {
   return async function (dispatch) {
     const response = await fetch(
-      `https://chapakazi-server-production.up.railway.app/handymen/${profileId}`,
+      `https://walanda-server-production.up.railway.app/handymen/${profileId}`,
       {
         method: "PATCH",
         headers: {
@@ -110,7 +110,7 @@ export function updateSpeciality(
 ) {
   return async function (dispatch) {
     const response = await fetch(
-      `https://chapakazi-server-production.up.railway.app/handymen/${profileId}`,
+      `https://walanda-server-production.up.railway.app/handymen/${profileId}`,
       {
         method: "PATCH",
         headers: {
@@ -135,7 +135,7 @@ export function updateSpeciality(
 export function updateRating(profileId, token, rating, setTriggerRating) {
   return async function (dispatch) {
     const response = await fetch(
-      `https://chapakazi-server-production.up.railway.app/handymen/${profileId}`,
+      `https://walanda-server-production.up.railway.app/handymen/${profileId}`,
       {
         method: "PATCH",
         headers: {
@@ -166,7 +166,7 @@ export function updateDescription(
 ) {
   return async function (dispatch) {
     const response = await fetch(
-      `https://chapakazi-server-production.up.railway.app/handymen/${profileId}`,
+      `https://walanda-server-production.up.railway.app/handymen/${profileId}`,
       {
         method: "PATCH",
         headers: {

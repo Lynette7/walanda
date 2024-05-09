@@ -6,12 +6,12 @@ import LandingHeader from "../LandingTopHeader/LandingHeader";
 
 export default function useDisplayHeader() {
   const profileId = JSON.parse(localStorage.getItem("profileId"));
-  const token = localStorage.getItem("handyman");
-  const [handyman, setHandyman] = useState({});
+  const token = localStorage.getItem("expense");
+  const [expense, setExpense] = useState({});
   useEffect(() => {
     const displayExpense = async () => {
       const response = await fetch(
-        `https://chapakazi-server-production.up.railway.app/handymen/${profileId}`,
+        `https://walanda-server-production.up.railway.app/handymen/${profileId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -21,7 +21,7 @@ export default function useDisplayHeader() {
       const data = await response.json();
 
       if (response.ok) {
-        setHandyman(data);
+        setExpense(data);
       } else {
         console.log(data.errors);
       }
@@ -29,14 +29,14 @@ export default function useDisplayHeader() {
     displayExpense();
   }, [profileId, token]);
 
-  const handymanLength = Object.keys(handyman).length;
+  const expenseLength = Object.keys(expense).length;
   const customer = useSelector((state) => state.customers.customer);
   const customerLength = Object.keys(customer).length;
 
   const displayHeader = () => {
     if (customerLength > 0) {
       return <LandingHeader />;
-    } else if (handymanLength > 0) {
+    } else if (expenseLength > 0) {
       return <LandingHeader />;
     } else {
       return <LandingHeader />;

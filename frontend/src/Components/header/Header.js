@@ -10,12 +10,12 @@ function Header() {
   const [active, setActive] = useState(false);
   function logout() {
     setActive(true);
-    localStorage.removeItem("handyman");
+    localStorage.removeItem("expense");
     localStorage.removeItem("profileId");
-    navigate("/handymanLogin");
+    navigate("/expenseLogin");
   }
 
-  const handyman = useSelector((state) => state.handyman.handyman);
+  const expense = useSelector((state) => state.expense.expense);
 
   return (
     <div className="header">
@@ -39,7 +39,7 @@ function Header() {
             <li> View Reviews </li>
           </Link>
 
-          <Link to="/handymanProfile">
+          <Link to="/expenseProfile">
             <li>
               <FontAwesomeIcon icon={faUser} id="profile" />
             </li>

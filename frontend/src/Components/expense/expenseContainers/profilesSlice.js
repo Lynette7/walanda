@@ -4,14 +4,14 @@ export const fetchProfiles = (token) => {
       type: "profiles/loading",
     });
 
-    const response = await fetch("https://chapakazi-server-production.up.railway.app/handymen", {
+    const response = await fetch("https://walanda-server-production.up.railway.app/handymen", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
     });
 
     const profiles = await response.json();
-    
+
 
     if (response.ok) {
       dispatch({
