@@ -1,11 +1,14 @@
 # Walanda
 
 ## About
+Walanda is a decentralized expense-splitting application on the Celo blockchain
 
 ## Technologies Used
 + ReactJs
 + Css
 + Figma
++ CELO Blockchain
++ Ethers.js
 
 ## Setup
 To run this project, one must have either of the following;
