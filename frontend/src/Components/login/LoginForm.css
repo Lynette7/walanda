@@ -11,7 +11,7 @@
 }
 
 #login-form {
-  background-color: var(--primary-color);
+  background-color: rgba(152, 203, 212, 0.803);
   width: 70%;
   border-radius: 0.5rem;
   margin: 0 auto;

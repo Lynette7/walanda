@@ -35,7 +35,7 @@ npm start
 
 ## Live Page
 
-[Frontend Link]()
+<!-- [Frontend Link]() -->
 
 ## Copyright and License
 [MIT](https://)
