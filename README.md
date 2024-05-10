@@ -30,7 +30,7 @@ npm start
 ```
 
 ## Sample Screenshots
-![imgg1.png](frontend/img1.png)
+![imgg1.png](frontend/imgg1.png)
 
 
 ## Live Page
