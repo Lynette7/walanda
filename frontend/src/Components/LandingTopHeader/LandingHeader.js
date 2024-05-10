@@ -17,9 +17,9 @@ function LandingHeader() {
           <Link to="/expenseLogin">
             <li className=" landing-login "> login </li>
           </Link>
-          <Link to="/expenseSignUp">
+          {/* <Link to="/expenseSignUp">
             <li className="landing-signup"> Sign Up </li>
-          </Link>
+          </Link> */}
         </ul>
       </nav>
     </header>

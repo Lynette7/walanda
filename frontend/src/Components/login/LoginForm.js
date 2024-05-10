@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "./LoginForm.css";
 import { addlogin } from "../expense/LoginExpSlice";
 import LandingHeader from "../LandingTopHeader/LandingHeader";
+import { ethers } from "ethers";
 // import { Dashboard } from "@mui/icons-material";
 // import Dashboard from "../../pages/Dashboard";
 
@@ -16,10 +17,9 @@ function LoginForm() {
     password: "",
   });
   const errors = useSelector((state) => state.expense.errors);
-  // const status = useSelector((state) => state.expense.status);
-  const expense = useSelector((state) => state.expense);
   const [visible, setVisible] = useState(false);
-  console.log(expense);
+  const [connected,setConnected] = useState('');
+
   function handleChange(event) {
     const name = event.target.name;
     const value = event.target.value;
@@ -42,19 +42,61 @@ function LoginForm() {
     };
   }, [errors]);
 
+  async function connectMetamask() {
+    if (window.ethereum) {
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      try {
+        // Request account access if needed
+        let accounts=await window.ethereum.request({ method: "eth_requestAccounts" });
+        // Accounts now exposed
+        console.log("Connected to Metamask!");
+        setConnected(accounts[0])
+        // Additional logic after connecting to Metamask, e.g., get account details
+      } catch (error) {
+        console.error(error);
+      }
+    } else {
+      console.log("Metamask not detected");
+    }
+  }
+
   function handleSubmit(event) {
     event.preventDefault();
     dispatch(addlogin(login, () => {
-      navigate.push("/dashboard"); // Navigate to the dashboard page after successful login
+      navigate.push("/dashboard");
     }));
   }
+
   return (
     <>
       <LandingHeader />
       <div className="login-form-container">
         <form id="login-form" onSubmit={handleSubmit}>
           <h1 className="extra">Login</h1>
-          <div className="row">
+          <div className="login-btn">
+            {connected ? (
+              <p>Connected Address :{connected}</p>
+            ):(
+              <button onClick={connectMetamask}>Connect with Metamask</button>
+
+            )}
+          </div>
+          <Link to="/expenseSignUp">
+            <h2>
+              Do not have an account? <span className="sign-up">Sign Up</span>
+            </h2>
+          </Link>
+        </form>
+      </div>
+    </>
+  );
+}
+
+
+export default LoginForm;
+
+
+{/* <div className="row">
             <div className="rows">
               <label> username </label> <br />
               <input
@@ -85,22 +127,4 @@ function LoginForm() {
                 ) : null
               ) : null}
             </div>
-          </div>
-          <div className="login-btn">
-            <button>
-              {/* {status === "loading" ? "logging in as ..." : " Log in"} */}
-              Log in
-            </button>
-          </div>
-          <Link to="/expenseSignUp">
-            <h2>
-              Do not have an account ?<span className="sign-up"> Sign Up </span>
-            </h2>
-          </Link>
-        </form>
-      </div>
-    </>
-  );
-}
-
-export default LoginForm;
+          </div> */}

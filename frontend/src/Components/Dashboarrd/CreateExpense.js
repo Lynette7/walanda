@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import OpenExpenses from './OpenExpenses';
 import ClosedExpenses from './ClosedExpenses';
+import './SideBar.css';
 
 
 function CreateExpense(props) {
@@ -155,7 +156,7 @@ function CreateExpense(props) {
                                     id="members"
                                     type="text"
                                     value={members}
-                                    placeholder="Enter member name"
+                                    placeholder="Enter member address"
                                     onChange={(e) => setMembers(e.target.value)}
                                 />
                                 <button

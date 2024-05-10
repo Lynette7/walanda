@@ -51,7 +51,7 @@ function SideBar() {
           <span>nda</span>
         </h2>
       </Link>
-      <img src="frontend/public/images/30.png"
+      <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210182541/Untitled-design-(30).png"
           class="icn menuicn"
           id="menuicn"
           alt="menu-icon" />
@@ -61,7 +61,7 @@ function SideBar() {
         <input type="text"
           placeholder="Search" />
         <div class="searchbtn">
-          <img src="frontend/public/images/28.png"
+          <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210180758/Untitled-design-(28).png"
             class="icn srchicn"
             alt="search-icon" />
         </div>
@@ -69,7 +69,7 @@ function SideBar() {
 
       <div class="message">
         <div class="circle"></div>
-        <img src="frontend/public/images/8.png"
+        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/8.png"
           class="icn"
           alt="" />
         <div class="dp">
@@ -94,9 +94,9 @@ function SideBar() {
 
 
               <div className={`nav-option option2 ${isCreatedExpensesOpen ? 'active' : ''}`} onClick={handleCreatedExpensesClick}>
-                <img src="frontend/public/images/5.png" className="nav-img" alt="articles" />
+                <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/5.png" className="nav-img" alt="articles" />
                 <h3>Created Expenses</h3>
-                {isCreatedExpensesOpen && (
+                {/* {isCreatedExpensesOpen && (
                   <div className="created-expenses-container">
                     {expenses.map((expense) => (
                       <div className="expense-card" key={expense.id}>
@@ -107,7 +107,8 @@ function SideBar() {
                       </div>
                     ))}
                   </div>
-                )}
+
+                )} */}
               </div>
 
               <div class="nav-option option3" onClick={handleCreatedExpensesClick}>
@@ -118,14 +119,14 @@ function SideBar() {
               </div>
 
               <div class="nav-option option6">
-                <img src="frontend/public/images/4.png"
+                <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/4.png"
                   class="nav-img"
                   alt="settings" />
                 <h3> Settings</h3>
               </div>
 
               <div class="nav-option logout">
-                <img src="frontend/public/images/7.png"
+                <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/7.png"
                   class="nav-img"
                   alt="logout" />
                 <h3>Logout</h3>

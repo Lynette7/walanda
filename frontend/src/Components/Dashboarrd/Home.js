@@ -16,7 +16,7 @@ function Home(){
                 placeholder="Search"/>
             <div class="searchbtn">
             <img src=
-"frontend/public/images/28.png"
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210180758/Untitled-design-(28).png"
                     class="icn srchicn"
                     alt="search-button"/>
             </div>
@@ -34,7 +34,7 @@ function Home(){
                 </div>
 
                 <img src=
-"frontend/public/images/28.png"
+"fhttps://media.geeksforgeeks.org/wp-content/uploads/20221210184645/Untitled-design-(31).png"
                     alt="Views"/>
             </div>
 
@@ -45,18 +45,18 @@ function Home(){
                 </div>
 
                 <img src=
-"frontend/public/images/14.png"
+"fhttps://media.geeksforgeeks.org/wp-content/uploads/20221210185030/14.png"
                     alt="likes"/>
             </div>
 
-            <div class="box box3">
+            <div class="box b   ox3">
                 <div class="text">
                     <h2 class="topic-heading">320</h2>
                     <h2 class="topic">Comments</h2>
                 </div>
 
                 <img src=
-"frontend/public/images/32.png"
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210184645/Untitled-design-(32).png"
                     alt="comments"/>
             </div>
 
@@ -67,7 +67,7 @@ function Home(){
                 </div>
 
                 <img src=
-"frontend/public/images/13.png" alt="published"/>
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210185029/13.png" alt="published"/>
             </div>
         </div>
 
